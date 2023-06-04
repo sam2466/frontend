@@ -1,0 +1,35 @@
+.title{
+    display:flex;
+}
+.buyshop{
+    margin:0px 0px 0px 800px;
+    flex:20;
+    display:inline;
+    color:white;
+}
+.shop{
+    margin:20px 0px 20px 0px; 
+    padding:10px; 
+    background-color:rgb(255, 144, 0); 
+    display:inline;
+    border-radius:30px;
+}
+.buttom{
+    flex:1;
+    display:inline;
+    width: 40px; 
+    height: 40px; 
+    fill:white;
+}
+#setting{
+    flex:1;
+}
+#cart{
+    flex:1;
+}
+#man{
+    flex:1;
+}
+#search{
+    flex:1;
+}

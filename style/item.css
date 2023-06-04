@@ -1,0 +1,73 @@
+.item{
+    
+    padding:10px 0 200px 0;
+    
+}
+.picture{
+    float: left;
+    width: 200px;
+    height: 200px;
+    margin:0px 20px 0px 0px;
+}
+.description{
+    display:inline;
+    color:white;
+    
+}
+.line{
+    position:relative;
+    top:200px;
+    width:2000px;
+    height:2px;
+    margin:0px 0 150px 0;
+    background-color:grey;
+}
+.functionnal{
+    
+    margin:0px 0px 0px 400px;
+}
+#left{
+ 
+    margin:100px 0px 0px 0px;
+    color: rgb(255, 144, 0);
+    display:inline;
+}
+.buttom{
+
+    width:30px; 
+    height: 30px; 
+    fill:white;
+    
+}
+.minus{
+    display:inline;
+    margin: 0px 0px 0px 400px;
+}
+
+#quantity{
+
+    height:20px;
+    width: 30px;
+    position:relative;
+    bottom:10px;
+   
+
+}
+.plus{
+    display:inline;
+    margin: 0px 300px 0px 0px;
+}
+
+#buy{
+    display:inline;
+
+}
+#price{
+
+    font-size: 20px;
+    display:inline;
+    background-color:rgb(255, 144, 0); 
+    color:white;
+    padding:2px; 
+}
+
