@@ -32,8 +32,7 @@
     color: rgb(255, 144, 0);
     display:inline;
 }
-.buttom{
-
+.buttomItem{
     width:30px; 
     height: 30px; 
     fill:white;
@@ -50,6 +49,7 @@
     width: 30px;
     position:relative;
     bottom:10px;
+    
    
 
 }

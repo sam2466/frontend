@@ -1,9 +1,52 @@
 .title{
     display:flex;
 }
-.buyshop{
-    margin:0px 0px 0px 800px;
-    flex:20;
+.menu{
+  opacity: 0.95;
+  width: 170px;
+  background-color: grey ;
+  position: absolute;
+  top: 56px;
+  bottom: 0;
+  left: 0;
+  border-right: 5px solid rgb(255, 144, 0);
+  padding: 20px;
+  
+  transform: translateX(0);
+  transition: all 0.5s;
+  .active {
+    transform: translateX(0px);
+  }
+
+}
+.search{
+    display: flex ;
+
+}
+#searchName{
+    flex:5;
+    height:20px;
+    width: 50px;
+}
+#searchButtom{
+    flex:1;
+    width: 20px; 
+    height: 20px; 
+
+}
+
+.list{
+
+}
+.type{
+
+}
+.brand{
+
+}
+#buyshop{
+    style="margin:0px 0px 0px 0px;"
+    flex:1;
     display:inline;
     color:white;
 }
@@ -14,12 +57,17 @@
     display:inline;
     border-radius:30px;
 }
+.block{
+    flex:1;
+    margin:0px 0px 0px 750px;
+}
 .buttom{
     flex:1;
     display:inline;
     width: 40px; 
     height: 40px; 
     fill:white;
+
 }
 #setting{
     flex:1;
@@ -28,8 +76,5 @@
     flex:1;
 }
 #man{
-    flex:1;
-}
-#search{
     flex:1;
 }
