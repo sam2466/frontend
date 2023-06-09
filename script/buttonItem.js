@@ -6,10 +6,11 @@ quantity.value=0;
 
 
 minus.addEventListener("click", function(){
-    quantity.value=quantity.value-1;
+    if(quantity.value>0)
+        quantity.value=parseInt(quantity.value)-1;
 });
 
 plus.addEventListener("click", function(){
-    quantity.value=quantity.value+1;
+        quantity.value=parseInt(quantity.value)+1;
 });
 

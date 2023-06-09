@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/title.css">
-    <link rel="stylesheet" href="style/login.css">
-    <title>LOGIN</title>
+    <link rel="stylesheet" href="style/register.css">
+    <title>REGISTER</title>
 </head>
 <body bgcolor="black">
 
@@ -39,23 +39,36 @@
 
 <div class="main">
 
-    <div class="login">
+    <div class="register">
 
         <form action="">
-            <h2>Login</h2>
+            <h2>Register</h2>
 
             <div class="input">
-                <input type="text" required>
+                <input type="text"  maxlength="16" required>
                 <label for="">Account</label>
             </div>
             <div class="input">
-                <input type="password" required>
+                <input type="password"  maxlength="16" required>
                 <label for="">Password</label>
             </div>
-            <button id="loginButton" >Login</button>
-            <div class="toRegister">
-                <a href="register.html">Register</a>
+            <div class="input">
+                <input type="text"  maxlength="8" required>
+                <label for="">Name</label>
             </div>
+            <div class="longInput">
+                <input  type="text"  maxlength="32" >
+                <label for="">Address</label>
+            </div>
+            <div class="longInput">
+                <input type="text"  maxlength="32" required>
+                <label for="">E_mail</label>
+            </div>
+            <div class="input">
+                <input type="text"  maxlength="16" >
+                <label for="">Birth_Day</label>
+            </div>
+            <button id="registerButton">Register</button>
         </form>
     </div>
     
@@ -72,7 +85,7 @@
     <div class="menu"> 
         <form>
             <div class="search">
-                <input type="text" id="searchName" placeholder="search"> </input>
+                <input type="text" id="searchName" placeholder="search" > </input>
                     <svg xmlns="http://www.w3.org/2000/svg"   id="searchButton" viewBox="0 0 16 16 "  >
                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                     </svg>

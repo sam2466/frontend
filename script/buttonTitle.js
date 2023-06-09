@@ -5,7 +5,7 @@ let active = document.getElementById("menu-active");
 
 
 setting.addEventListener("click", function(){
-    active.checked=(active.checked==true?false:true);
+    active.checked=(active.checked===true?false:true);
 });
 
 buyshop.addEventListener("click", function() {
