@@ -1,23 +1,24 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import Fapi from "../API/Fapi";
 import ListA from "../components/ListA";
 
 function Items() {
-	const members = Fapi.randomItem();
-
+	const members = Fapi.getAllItem();
+	
+	
 	const newItem = async (item) => {
 		await Fapi.newItem(item);
-		mutate(undefined);
+		// mutate(undefined);
 	};
 
 	const quantity = async (id, i_quantity) => {
 		await Fapi.quantity(id, i_quantity);
-		mutate(undefined);
+		// mutate(undefined);
 	};
 
 	const deleteItem = async (id) => {
 		await Fapi.deleteItem(id);
-		mutate(undefined);
+		// mutate(undefined);
 	};
 
 	return (

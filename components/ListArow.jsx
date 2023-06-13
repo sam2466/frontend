@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+/* eslint-disable react/prop-types */
+// import React, { useState } from "react";
+
 
 function ListArow(props) {
 	const member = props.member;
-
-	// const actions = props.actions;
+	const actions = props.actions;
 
 	return (
 		<tr>
@@ -13,7 +14,7 @@ function ListArow(props) {
 						className="bi bi-pencil "
 						onClick={(e) => {
 							e.stopPropagation();
-							actions.quantity(member.i_id, quantity);
+							actions.quantity(member.i_id, member.i_quantity);
 						}}></i>
 				</button>
 				<button>
@@ -29,7 +30,7 @@ function ListArow(props) {
 				scope="col"
 				onClick={(e) => {
 					e.stopPropagation();
-					actions.quantity(member.i_id, quantity);
+					actions.quantity(member.i_id, member.i_quantity);
 				}}>
 				{member.i_id}
 			</td>
@@ -46,7 +47,7 @@ function ListArow(props) {
 					className="rounded float-start"
 					alt="test"
 				/>
-				<a href={member.i_pict}>{member.i_pict}</a>
+				{/* <a href={member.i_pict}>{member.i_pict}</a> */}
 			</td>
 			<td scope="col" style={{ width: "300px" }}>
 				<p className="text-break">

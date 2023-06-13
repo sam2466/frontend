@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+/* eslint-disable react/prop-types */
+import  { useState } from "react";
 import ListArow from "./ListArow";
 
 function ListA(props) {
@@ -11,22 +12,29 @@ function ListA(props) {
 			b_id: 0,
 			t_id: 0,
 			i_pict: "",
-			description: null,
-		},
+			description: "",
+		}
 	]);
 
-	const fun = () => {
-		props.members.then((r) => {
-			setMembers([...r]);
-		});
-	};
+	// const fun = () => {
+	// 	props.members.then((r) => {
+	// 		setMembers([...r]);
+	// 		console.log(members);
+	// 	});
+	// };onClick={fun}
+	const promise = props.members;
+	promise.then((result) => {
+		setMembers([...result]);
+	})
+
+	const actions = props.actions;
 
 	return (
 		<div>
 			<table className="table table-secondary table-striped table-hover table-responsive">
 				<thead>
 					<tr>
-						<th scope="col" onClick={fun}>
+						<th scope="col" >
 							actions
 						</th>
 						<th scope="col">i_id</th>
@@ -41,8 +49,8 @@ function ListA(props) {
 				</thead>
 				<tbody>
 					{members.map((ele, idx) => (
-						<ListArow key={idx} member={ele} />
-					))}{" "}
+						<ListArow key={idx} member={ele} actions ={actions}/>
+					))}
 				</tbody>
 			</table>
 		</div>
