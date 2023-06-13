@@ -1,13 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Fapi from "../API/Fapi";
 import ListA from "../components/ListA";
 
 function Items() {
-	const members = Fapi.getItemById(60);
-
-	const test = () => {
-		console.log({ members });
-	};
+	const members = Fapi.randomItem();
 
 	const newItem = async (item) => {
 		await Fapi.newItem(item);
@@ -26,16 +22,14 @@ function Items() {
 
 	return (
 		<div>
-			<h1 onClick={test}>click</h1>
-
-			{/* <ListA
+			<ListA
 				members={members}
 				actions={{
 					newItem: newItem,
 					quantity: quantity,
 					deleteItem: deleteItem,
 				}}
-			/> */}
+			/>
 		</div>
 	);
 }

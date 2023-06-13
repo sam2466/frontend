@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 
 function ListArow(props) {
 	const member = props.member;
-	const actions = props.actions;
+
+	// const actions = props.actions;
+
 	return (
 		<tr>
 			<td scope="col">
 				<button>
 					<i
-						className="bi bi-pencil"
+						className="bi bi-pencil "
 						onClick={(e) => {
 							e.stopPropagation();
 							actions.quantity(member.i_id, quantity);
@@ -23,7 +25,14 @@ function ListArow(props) {
 						}}></i>
 				</button>
 			</td>
-			<td scope="col">{member.i_id}</td>
+			<td
+				scope="col"
+				onClick={(e) => {
+					e.stopPropagation();
+					actions.quantity(member.i_id, quantity);
+				}}>
+				{member.i_id}
+			</td>
 			<td scope="col">
 				<strong>{member.i_name}</strong>
 			</td>
