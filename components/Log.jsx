@@ -52,6 +52,7 @@ function Log() {
 								Fapi.isLogin(account, password).then((result) => {
 									console.log(result);
 								});
+								location.href=`/Items?${new URLSearchParams(account, password)}`;
 							}
 						}>
 					Login
