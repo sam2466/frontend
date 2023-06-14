@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import MyLink from "./MyLink";
 import MyLink2 from "./MyLink2";
 
 function Navbar() {
+	const [name, setName] = useState();
 	return (
 		<nav
 			className="navbar navbar-expand-lg bg-dark bg-body-tertiary  "
@@ -51,8 +52,19 @@ function Navbar() {
 							type="search"
 							placeholder="Search"
 							aria-label="Search"
+							value={name}
+							onChange={(e)=>{
+								e.stopPropagation();
+								setName(e.currentTarget.value);
+							}}
 						/>
-						<button className="btn btn-light text-secondary" type="submit">
+						<button	className="btn btn-light text-secondary" 
+								type="submit"
+								onClick={(e)=>{
+									e.stopPropagation();
+									location.href = `/Search/${name}`;
+								}}
+						>
 							Search
 						</button>
 					</form>
