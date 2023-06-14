@@ -1,14 +1,20 @@
 import React from "react";
 import Fapi from "../API/Fapi";
-import ListA from "../components/ListA";
+import Item from "../components/Item";
 
 function Home() {
 	const { members, mutate, error, isloading } = Fapi.getRandom5();
+
+	const updateItem = async (item) => {
+		await Fapi.updateItem(item);
+		mutate(undefined);
+	};
+
 	return (
 		<div>
-			<div>
-				<ListA members={members} />
-			</div>
+			{members?.map((ele, idx) => (
+				<Item key={ele.id} member={ele} actions={{ updateItem: updateItem }} />
+			))}
 		</div>
 	);
 }

@@ -24,8 +24,18 @@ function ListArow(props) {
 							i_quantity: quantity,
 							description: description,
 						};
-						console.log(item);
-						actions.updateItem(item);
+						if (
+							name != undefined &&
+							price != undefined &&
+							price > 0 &&
+							quantity != undefined &&
+							quantity > 0
+						) {
+							console.log(item);
+							actions.updateItem(item);
+						} else {
+							alert("re");
+						}
 					}}>
 					<i className="bi bi-pencil "></i>
 				</button>
@@ -38,10 +48,10 @@ function ListArow(props) {
 					<i className="bi bi-x-circle-fill"></i>
 				</button>
 			</td>
-			<td scope="col" className="text-center " style={{ width: "5px" }}>
+			<td scope="col" className="text-center " style={{ width: "20px" }}>
 				{member.t_id}
 			</td>
-			<td scope="col" className="text-center " style={{ width: "5px" }}>
+			<td scope="col" className="text-center " style={{ width: "20px" }}>
 				{member.b_id}
 			</td>
 			<td style={{ width: "5px" }}>{member.i_id}</td>

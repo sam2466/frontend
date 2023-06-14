@@ -7,14 +7,16 @@ function Search() {
 	const { name } = useParams();
 	console.log(name);
 	const { members, mutate, error, isloading } = Fapi.getItemByName(name);
-	const fun = () => {
-		console.log(members);
+
+	const quantity = async (id, i_quantity) => {
+		await Fapi.quantity(id, i_quantity);
+		mutate(undefined);
 	};
 
 	return (
 		<div>
 			{members?.map((ele, idx) => (
-				<Item key={ele.id} member={ele} />
+				<Item key={ele.id} member={ele} actions={{ quantity: quantity }} />
 			))}
 		</div>
 	);

@@ -14,8 +14,33 @@ img{
     color:white;
     font-weight:600px
 }
-.display{
+.x{
     
+    font-weight:600px;
+    color:white;
+    font-size: xx-large;
+    position: relative;
+    left: 100px;
+    top:400px;
+}
 
+.y{
+    color:rgb(255,144,0);
+    font-size: xx-large;
+    position: relative;
+    font-weight:600px;
+    left: 1100px;
+    top:-70px;
+}
+.z{
+    position: relative;
+    top:-110px;
+    left: 680px;
+
+}
+.c{
+    position: relative;
+    top:-153px;
+    left: 1370px;
 
 }

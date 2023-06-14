@@ -34,15 +34,15 @@ function ListArow1(props) {
 							brand >= 1 &&
 							name != undefined &&
 							price != undefined &&
-							price >= 0 &&
+							price > 0 &&
 							quantity != undefined &&
-							quantity >= 0
+							quantity > 0
 						) {
 							e.stopPropagation();
 
 							Fapi.newItem(item);
 						} else {
-							alert("fuck");
+							alert("re");
 						}
 					}}>
 					<i className="bi bi-plus-square "></i>
