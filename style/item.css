@@ -1,85 +1,21 @@
-.item{
-    color:white;
-    padding:10px 0 200px 0;
-}
-.itemName{
-    display: flex;
-    justify-content: center; 
-}
-.picture{
-    float: left;
-    position: absolute;
-    left:50px;
-    width: 250px;
-    height: 250px;
-    margin:0px 20px 0px 0px;
-}
-.description{
-    font-size: x-large;
-    display: flex;
-    justify-content: center; 
-    color:white;
-    
-}
-.line{
-    position:relative;
-    top:300px;
-    width:2000px;
-    height:2px;
-    margin:0px 0 100px 0;
-    background-color:grey;
-}
-.functional{
-    display: flex;
-    justify-content: center;
-}
-
-.left{
-    display: flex;
-    justify-content: center;
-}
-#left{
-    color: rgb(255, 144, 0);
-    display:inline;
-}
-
-.buttonItem{
-    width:30px; 
-    height: 30px; 
-    fill:white;
-}
-.buttonItem:hover{
-    background-color: grey;
-
-}
-.minus{
-    display:inline;
-    margin: 0px 0px 0px 400px;
-}
-
-#quantity{
-    height:20px;
-    width: 30px;
-}
-.plus{
-    display:inline;
-    margin: 0px 300px 0px 0px;
-}
-.buy{
-    position: absolute;
-    right:0px;
-    margin-right:10px ;
-}
-#buy{
-    display:inline;
-}
-#price{
-    font-size: 20px;
-    display:inline;
-    background-color:rgb(255, 144, 0); 
-    color:white;
+img{
     position: relative;
-    bottom:10px;
-    padding:2px; 
-}
+    left:60px;
+    top:80px;
+    height: 400px;
+    width:400px
 
+}
+.name{
+    display:flex;
+    justify-content: center;
+    position: relative;
+    top: 10px;
+    color:white;
+    font-weight:600px
+}
+.display{
+    
+
+
+}

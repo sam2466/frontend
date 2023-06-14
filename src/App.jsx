@@ -7,6 +7,7 @@ import Manage from "../pages/Manage";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Search from "../pages/Search";
 
 function App() {
 	return (
@@ -20,6 +21,7 @@ function App() {
 					<Route path="/Items" element={<Items />}></Route>
 					<Route path="/Manage" element={<Manage />}></Route>
 					<Route path="/register" element={<Register />}></Route>
+					<Route path="/Search/:name" element={<Search />}></Route>
 				</Routes>
 			</Router>
 		</div>

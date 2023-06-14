@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import MyLink from "./MyLink";
 import MyLink2 from "./MyLink2";
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
+	const search = "";
+	const [name, setName] = useState(search);
+	let navigation = useNavigate();
+
 	return (
 		<nav
 			className="navbar navbar-expand-lg bg-dark bg-body-tertiary  "
@@ -41,7 +46,7 @@ function Navbar() {
 						className="navbar-nav me-auto mb-2 mb-lg-0 navbar-nav-scroll"
 						style={{ bsscrollheight: "100px" }}>
 						<MyLink to="/" icon="house" color="white" text="HOME" />
-						<MyLink to="/users" icon="person" color="white" text="USERS" />
+						{/* <MyLink to="/users" icon="person" color="white" text="USERS" /> */}
 						<MyLink to="/items" icon="cart3" color="white" text="ITEMS" />
 						<MyLink2 to="/manage" icon="" color="dark" text="0" />
 					</ul>
@@ -51,8 +56,19 @@ function Navbar() {
 							type="search"
 							placeholder="Search"
 							aria-label="Search"
+							value={name}
+							onChange={(e) => {
+								e.stopPropagation();
+								setName(e.currentTarget.value);
+							}}
 						/>
-						<button className="btn btn-light text-secondary" type="submit">
+						<button
+							className="btn btn-light text-secondary"
+							onClick={(e) => {
+								e.stopPropagation();
+								console.log(name);
+								navigation(`/Search/${name}`);
+							}}>
 							Search
 						</button>
 					</form>
