@@ -5,33 +5,39 @@ function Reg() {
 	return (
 		<div className="main">
 			<div className="register">
-				<form action="">
+				<form className="mx-auto" action="">
 					<h2>Register</h2>
 
-					<div className="input">
-						<input type="text" maxLength={16} required />
+					<div className="input mx-auto my-3">
+						<input name="account" type="text" maxLength={16} required />
 						<label>Account(16)</label>
 					</div>
-					<div className="input">
-						<input type="password" maxLength={16} required />
+
+					<div className="input mx-auto my-3">
+						<input name="password" type="password" maxLength={16} required />
 						<label>Password(16)</label>
 					</div>
-					<div className="input">
-						<input type="text" maxLength={8} required />
-						<label>Name(8)</label>
-					</div>
-					<div className="longInput">
-						<input type="text" maxLength={32} />
+
+					{/* <div className="input mx-auto my-3">
+                        <input name = "name" type="text" maxLength={8} required />
+                        <label>Name(8)</label>
+                    </div> */}
+
+					<div className="longInput mx-auto my-3">
+						<input name="address" type="text" maxLength={32} />
 						<label>Address(32)</label>
 					</div>
-					<div className="longInput">
-						<input type="text" maxLength={32} required />
+
+					<div className="longInput mx-auto my-3">
+						<input name="email" type="text" maxLength={32} required />
 						<label>E_mail(32)</label>
 					</div>
-					<div className="input">
-						<input type="text" maxLength="16" />
-						<label>Birth_Day(32)</label>
+
+					<div className="longInput mx-auto my-3">
+						<input name="birth" type="text" maxLength={16} />
+						<label>Birth_Day(16)</label>
 					</div>
+
 					<button id="registerButton">Register</button>
 				</form>
 			</div>

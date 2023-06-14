@@ -37,7 +37,7 @@ const myFetch = async (method,url,body) => {
             return{members:data,mutate,error,isLoading:loading}
         },
          getItemByName:(name)=>{
-            const path = apiURL+'item/'+name;
+            const path = apiURL+'itemName/'+name;
             const fetcher = (path) => fetch(path).then((r)=>r.json())
             const{data,mutate,error,isLoading}=useSWR(path,fetcher,{refreshInterval:1000*10})
             const loading = !data && !error;
@@ -78,7 +78,7 @@ const myFetch = async (method,url,body) => {
         quantity:(id,i_quantity)=> myFetch('PUT',apiURL+'item/'+id,id,i_quantity),
         deleteItem:(id)=> myFetch('DELETE',apiURL+'item/'+id,{id}),
         randomItem:()=> myFetch('GET',apiURL+'random5'),
-        isLogin:(account,password)=>myFetch('GET',apiURL+`login?${new URLSearchParams({account,password})}`);
+        isLogin:(account,password)=>myFetch('GET',apiURL+`login?${new URLSearchParams({account,password})}`),
         newUser:(cname)=>myFetch('POST',apiURL+'customer',{cname}),
         updateUser:(account)=> myFetch('PUT',apiURL+'/customer/changePassword',{account}),
         deleteUser:(id)=> myFetch('DELETE',apiURL+'customer/'+{id},{id}),
