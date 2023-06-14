@@ -1,5 +1,5 @@
 import Navbar from "../components/Navbar";
-import Reg from "../components/Reg";
+import Register from "../pages/Register";
 import Home from "../pages/Home";
 import Users from "../pages/Users";
 import Items from "../pages/Items";
@@ -15,6 +15,7 @@ function App() {
 					<Route path="/" element={<Home />}></Route>
 					<Route path="/Users" element={<Users />}></Route>
 					<Route path="/Items" element={<Items />}></Route>
+					<Route path="/register" element={<Register />}></Route>
 				</Routes>
 			</Router>
 		</div>

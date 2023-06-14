@@ -1,4 +1,4 @@
-import React from "react";
+//import React from "react";
 import Reg from "../components/Reg";
 
 function Register() {
