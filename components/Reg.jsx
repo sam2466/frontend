@@ -3,18 +3,7 @@ import "../style/register.css";
 import Fapi from "../API/Fapi"
 
 function Reg() {
-	const data = [{
-		cname: "",
-		c_password: "",
-		c_email: "",
-		c_birth: "",
-		addr : ""
-	}];
-	const promise = Fapi.newUser(data);
-
-	promise.then((result) => {
-		console.log(result);
-	})
+	
 	
 	return (
 		<div className="main">

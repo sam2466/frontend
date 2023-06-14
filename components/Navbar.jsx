@@ -39,7 +39,7 @@ function Navbar() {
 					<ul
 						className="navbar-nav me-auto mb-2 mb-lg-0 navbar-nav-scroll"
 						style={{ bsscrollheight: "100px" }}>
-						<MyLink to="/" icon="house" color="white" text="HOME" />
+						{/* <MyLink to="/" icon="house" color="white" text="HOME" /> */}
 						<MyLink to="/users" icon="person" color="white" text="USERS" />
 						<MyLink to="/items" icon="cart3" color="white" text="ITEMS" />
 					</ul>
