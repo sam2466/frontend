@@ -1,4 +1,6 @@
 import React from "react";
+import MyLink from "./MyLink";
+import { Link } from "react-router-dom";
 import "../style/login.css";
 
 function Log() {
@@ -17,7 +19,9 @@ function Log() {
 				</div>
 				<button id="loginButton">Login</button>
 				<div className="toRegister">
-					<h3 href="#">Register</h3>
+					<Link to="/register">
+						<h3 href="#">Register</h3>
+					</Link>
 				</div>
 			</div>
 		</div>

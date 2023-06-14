@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import Fapi from "../API/Fapi";
 
-function ListArow(props) {
+function ListArow1(props) {
 	const member = props.member;
 	const actions = props.actions;
+	const [type, setType] = useState(member.t_id);
+	const [brand, setBrand] = useState(member.b_id);
 	const [name, setName] = useState(member.i_name);
 	const [price, setPrice] = useState(member.i_price);
 	const [quantity, setQuantity] = useState(member.i_quantity);
@@ -11,38 +14,63 @@ function ListArow(props) {
 
 	return (
 		<tr>
-			<td scope="col" style={{ width: "20px" }}>
+			<td scope="col" className="mx-auto" style={{ width: "20px" }}>
 				<button
-					className="btn btn-light my-1"
+					className="btn btn-light mx-auto "
 					onClick={(e) => {
-						e.stopPropagation();
 						const item = {
-							i_id: member.i_id,
+							b_id: Number(brand),
+							t_id: Number(type),
 							i_name: name,
-							i_price: price,
+							i_price: Number(price),
+							i_quantity: Number(quantity),
 							i_pict: picture,
-							i_quantity: quantity,
 							description: description,
 						};
 						console.log(item);
-						actions.updateItem(item);
+
+						if (
+							type >= 1 &&
+							brand >= 1 &&
+							name != undefined &&
+							price != undefined &&
+							price >= 0 &&
+							quantity != undefined &&
+							quantity >= 0
+						) {
+							e.stopPropagation();
+
+							Fapi.newItem(item);
+						} else {
+							alert("fuck");
+						}
 					}}>
-					<i className="bi bi-pencil "></i>
+					<i className="bi bi-plus-square "></i>
 				</button>
-				<button
-					className="btn btn-light"
-					onClick={(e) => {
+			</td>
+			<td scope="col" className="text-center " style={{ width: "5px" }}>
+				<input
+					type="number"
+					name="name"
+					className="form-control mx-auto text-dark "
+					value={type}
+					onChange={(e) => {
 						e.stopPropagation();
-						actions.deleteItem(member.i_id);
-					}}>
-					<i className="bi bi-x-circle-fill"></i>
-				</button>
+						setType(e.target.value);
+					}}
+				/>
 			</td>
 			<td scope="col" className="text-center " style={{ width: "5px" }}>
-				{member.t_id}
-			</td>
-			<td scope="col" className="text-center " style={{ width: "5px" }}>
-				{member.b_id}
+				<input
+					type="number"
+					name="name"
+					className="form-control mx-auto text-dark "
+					value={brand}
+					onChange={(e) => {
+						e.stopPropagation();
+						setBrand(e.target.value);
+					}}
+				/>
 			</td>
 			<td style={{ width: "5px" }}>{member.i_id}</td>
 			<td scope="col" className="text-center " style={{ width: "200px" }}>
@@ -111,4 +139,4 @@ function ListArow(props) {
 	);
 }
 
-export default ListArow;
+export default ListArow1;

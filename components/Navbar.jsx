@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import MyLink from "./MyLink";
+import MyLink2 from "./MyLink2";
 
 function Navbar() {
 	return (
@@ -42,6 +43,7 @@ function Navbar() {
 						<MyLink to="/" icon="house" color="white" text="HOME" />
 						<MyLink to="/users" icon="person" color="white" text="USERS" />
 						<MyLink to="/items" icon="cart3" color="white" text="ITEMS" />
+						<MyLink2 to="/manage" icon="" color="dark" text="0" />
 					</ul>
 					<form className="d-flex" role="search">
 						<input

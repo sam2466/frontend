@@ -1,10 +1,14 @@
 import React from "react";
-import Log from "../components/Log";
+import Fapi from "../API/Fapi";
+import ListA from "../components/ListA";
 
 function Home() {
+	const { members, mutate, error, isloading } = Fapi.getRandom5();
 	return (
 		<div>
-			<Log />
+			<div>
+				<ListA members={members} />
+			</div>
 		</div>
 	);
 }

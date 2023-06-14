@@ -10,36 +10,82 @@ const myFetch = async (method,url,body) => {
     if(method !== "GET"){
         options={...options,body:JSON.stringify(body)};
     }
-    const response = await fetch(url,options)
+    const response = await fetch(url,options);
     const result = await response.json();
-    console.log(result);
+    console.log(url);
+    
+
     return result;
     }
+    
 
     const Fapi={
 
-        // useMembers:()=>{ 
-        //    const fetcher = (url) => fetch(url).then((res)=>res.json());
-        //     const {data,mutate,error,isLoading} = useSWR(apiURL,fetcher,{refreshInterval:1000*10})
-        //     const loading = !data && !error;
-        //      return {members:data,mutate,error,isLoading,loading}
-        //  },
 
-        getAllType:()=> myFetch('GET',apiURL+'sidebar/type'),
-        getBrandByType:(type)=> myFetch('GET',apiURL+'sidebar/'+type),
-        getItemByBrand:(type,brand)=> myFetch('GET',apiURL+'sidebar/'+type+'/'+brand),
-        getItemById:(id)=> myFetch('GET',apiURL+'item/'+id),
-        getItemByName:(name)=>('GET',apiURL+'item/'+name),
-        newItem:(item)=> myFetch('POST',apiURL+'item',{item}),
-        quantity:(id,i_quantity)=> myFetch('PUT',apiURL+'item/'+id,{id},{i_quantity}),
+        getAllType:()=>{
+            const path = apiURL+'sidebar/type';
+            const fetcher = (path) => fetch(path).then((r)=>r.json())
+            const{data,mutate,error,isLoading}=useSWR(path,fetcher,{refreshInterval:1000*10})
+            const loading = !data && !error;
+            return{members:data,mutate,error,isLoading:loading}
+        },
+        getBrandByType:(type,brand)=>{
+            const path = apiURL+'sidebar/'+type+'/'+brand;
+            const fetcher = (path) => fetch(path).then((r)=>r.json())
+            const{data,mutate,error,isLoading}=useSWR(path,fetcher,{refreshInterval:1000*10})
+            const loading = !data && !error;
+            return{members:data,mutate,error,isLoading:loading}
+        },
+         getItemByName:(name)=>{
+            const path = apiURL+'item/'+name;
+            const fetcher = (path) => fetch(path).then((r)=>r.json())
+            const{data,mutate,error,isLoading}=useSWR(path,fetcher,{refreshInterval:1000*10})
+            const loading = !data && !error;
+            return{members:data,mutate,error,isLoading:loading}
+        },
+        getItemById:(id)=>{
+            const path = apiURL+'item/'+id;
+            const fetcher = (path) => fetch(path).then((r)=>r.json())
+            const{data,mutate,error,isLoading}=useSWR(path,fetcher,{refreshInterval:1000*10})
+            const loading = !data && !error;
+            return{members:data,mutate,error,isLoading:loading}
+        },
+        getRandom5:()=>{
+            const path = apiURL+'random5';
+            const fetcher = (path) => fetch(path).then((r)=>r.json())
+            const{data,mutate,error,isLoading}=useSWR(path,fetcher,{refreshInterval:1000*100})
+            const loading = !data && !error;
+            return{members:data,mutate,error,isLoading:loading}
+        },
+        getItem:()=>{
+            const path = apiURL+'item';
+            const fetcher = (path) => fetch(path).then((r)=>r.json())
+            const{data,mutate,error,isLoading}=useSWR(path,fetcher,{refreshInterval:1000*10})
+            const loading = !data && !error;
+            return{members:data,mutate,error,isLoading:loading}
+        },
+         getRecordByid:(id)=>{
+            const path = apiURL+'record/'+id;
+            const fetcher = (path) => fetch(path).then((r)=>r.json())
+            const{data,mutate,error,isLoading}=useSWR(path,fetcher,{refreshInterval:1000*10})
+            const loading = !data && !error;
+            return{members:data,mutate,error,isLoading:loading}
+        },
+
+
+        updateItem:(item)=>myFetch('PUT',apiURL+'updateItem',item),
+        newItem:(item)=> myFetch('POST',apiURL+'item',item),
+        quantity:(id,i_quantity)=> myFetch('PUT',apiURL+'item/'+id,id,i_quantity),
         deleteItem:(id)=> myFetch('DELETE',apiURL+'item/'+id,{id}),
         randomItem:()=> myFetch('GET',apiURL+'random5'),
-        isLogin:(account,password)=>myFetch('GET',apiURL+'login',{account},{password}),
+        isLogin:(account,password)=>myFetch('GET',apiURL+`login?${new URLSearchParams({account,password})}`);
         newUser:(cname)=>myFetch('POST',apiURL+'customer',{cname}),
         updateUser:(account)=> myFetch('PUT',apiURL+'/customer/changePassword',{account}),
         deleteUser:(id)=> myFetch('DELETE',apiURL+'customer/'+{id},{id}),
         newRecord:(aMember)=> myFetch('POST',apiURL+'record',aMember),
-        getRecordByid:(id)=>myFetch('GET',apiURL+'record/'+id,{id}),
+        
+    
+    
     }
 
     export default Fapi;
