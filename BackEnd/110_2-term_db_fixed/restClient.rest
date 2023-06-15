@@ -1,0 +1,108 @@
+###顯示商品種類
+GET http://localhost:5000/api/members/sidebar/type
+
+#####顯示商品種類包含的品牌
+GET http://localhost:5000/api/members/sidebar/2
+#####顯示商品種類+品牌包含的商品
+GET http://localhost:5000/api/members/sidebar/2/2
+
+
+###顯示所有商品
+GET http://localhost:5000/api/members/item
+
+####搜尋商品
+GET http://localhost:5000/api/members/itemName/RTX
+
+###隨機列出5樣商品
+GET http://localhost:5000/api/members/random5
+
+###修改商品
+PUT http://localhost:5000/api/members/updateItem
+Content-Type: application/json
+
+{
+    "i_name":"test64",
+    "i_price":64,
+    "i_quantity":100,
+    "i_pict":"123",
+    "description":"nmsl",
+    "i_id":65
+    
+}
+
+############新增商品
+POST http://localhost:5000/api/members/item
+Content-Type: application/json
+
+{
+    "i_name": "test",
+    "i_price": 11970,
+    "i_quantity": 1000,
+    "b_id": 2,
+    "t_id": 4
+}
+
+#########獲得商品資訊(id)
+GET http://localhost:5000/api/members/item/2
+
+############修改商品庫存
+PUT http://localhost:5000/api/members/item/6
+Content-Type: application/json
+
+{
+    "i_quantity": 10
+}
+
+###刪除商品
+DELETE  http://localhost:5000/api/members/item/64
+
+
+######登入後取得會員資料
+GET http://localhost:5000/api/members/login?account=test1&password=test1
+# Content-Type: application/json
+
+# {
+#     "account": "test2",
+#     "password": "test2"
+# }
+#####修改會員資料
+PUT http://localhost:5000/api/members/customers/changePassword
+Content-Type: application/json
+
+{
+    "account": "test2",
+    "password": "test6",
+    "c_email": "123456asds46@gmail.com",
+    "addr":"苗栗市",
+    "c_birth":"2022-01-10"
+    
+}
+
+##########新增會員
+POST http://localhost:5000/api/members/customer
+Content-Type: application/json
+
+{   
+    "cname":"test5",
+    "c_password":"test4",
+    "c_email": "test4",
+    "c_birth" :"1999-09-09",
+    "addr":"苗栗市"
+}
+###新增訂單
+POST http://localhost:5000/api/members/record
+Content-Type: application/json
+
+{   
+    "item_id": 1,
+    "quantity": 1 ,
+    "cus_id": 2,
+    "r_price": 100000
+}
+
+
+### 取得訂單紀錄 (會員id)
+GET http://localhost:5000/api/members/record/1
+####
+GET http://localhost:5000/api/members/random5
+

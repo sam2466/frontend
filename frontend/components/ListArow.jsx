@@ -79,9 +79,9 @@ function ListArow(props) {
 					}}
 				/>
 			</td>
-			<td scope="col" style={{ width: "20px" }}>
+			<td scope="col" style={{ width: "40px" }}>
 				<input
-					style={{ width: "50px" }}
+					style={{ width: "80px" }}
 					type="number"
 					name="quantity"
 					className="form-control mx-auto text-dark  "
@@ -106,10 +106,10 @@ function ListArow(props) {
 			</td>
 			<td scope="col" style={{ width: "20px" }}>
 				<input
-					style={{ width: "50px" }}
+					style={{ width: "250px" }}
 					type="text"
 					name="picture"
-					className="form-control mx-auto text-dark  "
+					className="form-control mx-auto text-dark text-break "
 					value={picture}
 					onChange={(e) => {
 						e.stopPropagation();

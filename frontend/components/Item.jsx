@@ -10,7 +10,7 @@ function Item(props) {
 		<div className="">
 			<a href={member.i_pict}>
 				<img
-					src="../1160358.png"
+					src={member.i_pict}
 					className="rounded float-start border rounded"
 					alt="..."></img>
 			</a>

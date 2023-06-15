@@ -50,6 +50,7 @@ function ListArow1(props) {
 			</td>
 			<td scope="col" className="text-center " style={{ width: "5px" }}>
 				<input
+					style={{ width: "80px" }}
 					type="number"
 					name="name"
 					className="form-control mx-auto text-dark "
@@ -62,6 +63,7 @@ function ListArow1(props) {
 			</td>
 			<td scope="col" className="text-center " style={{ width: "5px" }}>
 				<input
+					style={{ width: "80px" }}
 					type="number"
 					name="name"
 					className="form-control mx-auto text-dark "
@@ -124,7 +126,7 @@ function ListArow1(props) {
 			</td>
 			<td scope="col" style={{ width: "20px" }}>
 				<input
-					style={{ width: "50px" }}
+					style={{ width: "250px" }}
 					type="text"
 					name="picture"
 					className="form-control mx-auto text-dark  "
